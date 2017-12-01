@@ -1,0 +1,13 @@
+---
+
+# First 
+ name: Adding Beegfs repo
+ tags: beegfs
+ yum_repository:
+   name: BeeGFS 6 (RHEL7)
+   description: BeeGFS http://www.beegfs.io/ rpm release
+   #baseurl: file:///home/Mellanox-repo/RPMS
+   baseurl: "http://www.beegfs.io/release/beegfs_6/dists/rhel{{ ansible_distribution_major_version }}"
+   gpgkey: "http://www.beegfs.io/release/beegfs_6/gpg/RPM-GPG-KEY-beegfs"
+   gpgcheck: no
+ when: ansible_os_family == 'RedHat'
